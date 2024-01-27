@@ -1,0 +1,253 @@
+nav {
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.logo {
+    height: 100%;
+    width: 7rem;
+    display: grid;
+    place-content: center;
+}
+
+.logo > img {
+    padding: 1rem 0 0 1.5rem;
+    width: 100%;
+}
+
+.right {
+    height: 100%;
+    width: 12rem;
+    display: grid;
+    place-content: center;
+}
+
+.right a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right a span{
+    color: transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.right a span::after{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.2s;
+    color: #464646;
+    transform: translateY(0); 
+}
+
+.right a span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;left: 0;
+    transition: 0.2s;
+    color: #464646;
+    transform: translateY(100%);
+}
+
+.right a:hover span::before {
+    transform: translateY(0);
+}
+
+.right a:hover span::after {
+    transform: translateY(-100%);
+}
+
+.right a img {
+    height: 2rem;
+}
+
+.menusection {
+    position: fixed;
+    margin-top: 4rem;
+    height: calc(100% - 4rem);
+    right: -6.5rem;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.menu {
+    width: 12rem;
+    height: 12rem;
+}
+
+.circle {
+    position: relative;
+    height: 12rem;
+    width: 12rem;
+    background: #123B7E;
+    border-radius: 50%;   
+    transition: box-shadow 300ms linear;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    z-index: 99;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    width: 14rem;
+    height: 14rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    margin-left: -1.5rem;
+    background: rgba(18, 59, 126, 0.29);
+    transition: all .4s ease-in-out;
+    z-index: 90;
+}
+
+.lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-left: -3rem;
+    z-index: 99;
+}
+
+.lines .l1, .lines .l2 {
+    height: 4px;
+    width: 40px;
+    background: #d9d9d9;
+    border-radius: 2px;
+}
+
+.lines .l2 {
+    width: 20px;
+    margin-top: 4px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;z-index: 98;
+}
+.menu li {
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transition: all .8s;
+    width: 4rem;
+    
+}
+
+.container li a h2 {
+    text-align: center;
+    color: #000000;
+    font-family: 'poppins', sans-serif;
+    background: #d9d9d9;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 1px 5px;
+    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.4)
+}
+
+.menu li a i{
+    color: #000;
+    font-size: 2rem;
+    padding: 8px;
+    margin-top: 1rem;
+    margin-left: .5rem;
+    background: #d9d9d9;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.menu:hover li {
+    opacity: 1;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.5em;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+.menu ul {
+    transform: rotate(180deg) translateX(-3rem) translateY(-2.5rem);
+    transition: .8s all ease-in-out;
+}
+
+.menu li {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+.menu:hover .circle::before {
+    width: 24rem;
+    height: 24rem;
+    margin-left: -4.5rem;
+}
+
+.menu:hover .link1 {
+    transform: rotate(2deg);
+    position: absolute;
+    left: 0em;
+    top: -11.1em;
+}
+
+.menu:hover .link2{
+    transform: rotate(48deg);
+    position: absolute;
+    left: 7.5em;
+    top: -7.5em;
+}
+
+.menu:hover .link3{
+    transform: rotate(90deg);
+    position: absolute;
+    left: 10.3em;
+    top: 0;
+}
+
+.menu:hover .link4{
+    transform: rotate(132deg);
+    position: absolute;
+    left: 7.5em;
+    top: 7em;
+}
+
+.menu:hover .link5{
+    transform: rotate(178deg);
+    position: absolute;
+    left: 0em;
+    top: 10.5em;
+}
+
+
+
+
