@@ -1,9 +1,20 @@
-import React from 'react'
+// import React from 'react'
 
-const App = () => {
+// const App = () => {
+//   return (
+//     <div></div>
+//   )
+// }
+
+// export default App
+import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import './App.css';
+
+export default function App() {
   return (
-    <div></div>
-  )
+    <React.Fragment>
+      <Navbar/>
+    </React.Fragment>
+  );
 }
-
-export default App
