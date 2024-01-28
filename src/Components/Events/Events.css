@@ -26,6 +26,7 @@ letter-spacing: -3.66px;
     width:368px;
     height: 254px;
     text-align: center;
+    padding: 10px;
     background-color: #D9D9D9;
     margin: -190px 0 0  400px ;
     border-radius: 10px;
@@ -44,10 +45,22 @@ background:  lightgray 50% / cover no-repeat;
     width:368px;
     height: 254px;
     text-align: center;
+    padding: 10px;
     background-color: #D9D9D9;
-    margin: -220px 0 0  120px ;
+    margin: -200px 0 0  120px ;
     border-radius: 10px;
 background: rgba(217, 217, 217,0.71);
 backdrop-filter: blur(2px);
 box-shadow: 15px 16px 43.5px 0px rgba(0, 0, 0, 0.25);
+}
+button{
+display: flex;
+align-content: center;
+justify-content: end;
+border: none;
+background: transparent;
+color: rgba(18, 59, 126, 1);
+margin-left: 1284px;
+font-size: larger   ;
+
 }
