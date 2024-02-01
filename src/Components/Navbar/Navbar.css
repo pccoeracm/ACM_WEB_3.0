@@ -87,6 +87,7 @@ nav {
 .menu {
     width: 12rem;
     height: 12rem;
+    cursor: pointer;
 }
 
 .circle {
@@ -100,6 +101,8 @@ nav {
     align-items: center;
     justify-content: baseline;
     z-index: 99;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
 }
 
 .circle::before {
@@ -117,6 +120,19 @@ nav {
     z-index: 90;
 }
 
+.menu:hover{
+    .circle{
+        box-shadow: -1px 0px 12px #000;
+        transform: scale(1.01);
+    } 
+
+}
+
+.clickedCircle::before {
+    width: 24rem;
+    height: 24rem;
+}
+
 .lines {
     position: absolute;
     top: 50%;
@@ -124,28 +140,41 @@ nav {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
+    gap: 3px;
     align-items: end;
     margin-left: -3rem;
     z-index: 99;
 }
 
-.lines .l1, .lines .l2 {
+.hmblines{
     height: 4px;
     width: 40px;
     background: #d9d9d9;
     border-radius: 2px;
+    transform: none;
+    transition: all .4s ease-in-out;
 }
 
-.lines .l2 {
+.hmblines:nth-child(2) {
     width: 20px;
-    margin-top: 4px;
 }
+
+.clicked.hmblines{
+    transform: rotate(225deg);transition-delay: .1s;
+}
+
+.clicked.hmblines:nth-child(2){
+    width: 40px;
+    transform: rotate(495deg) translate(-.3em, .29em);
+    
+}
+
 
 .menu ul {
     list-style: none;
-    padding: 0;
+    padding: 1;
     position: absolute;
-    top: 50%;z-index: 98;
+    top: 50%;z-index: 99;
 }
 .menu li {
     display: grid;
@@ -153,7 +182,6 @@ nav {
     opacity: 0;
     transition: all .8s;
     width: 4rem;
-    
 }
 
 .container li a h2 {
@@ -179,10 +207,6 @@ nav {
     text-align: center;
 }
 
-.menu:hover li {
-    opacity: 1;
-}
-
 .menu a {
     color: white;
     text-decoration: none;
@@ -204,50 +228,57 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-
-
-
-.menu:hover .circle::before {
-    width: 24rem;
-    height: 24rem;
-    margin-left: -4.5rem;
+.link.clickedLink {
+    opacity: 1;
 }
 
-.menu:hover .link1 {
-    transform: rotate(2deg);
+.link.clickedLink:nth-child(1) {
+    transform: rotate(18deg);
     position: absolute;
     left: 0em;
-    top: -11.1em;
+    top: -10.6em;
+    i {
+        transform: rotate(165deg);
+    }
 }
 
-.menu:hover .link2{
-    transform: rotate(48deg);
+.link.clickedLink:nth-child(2) {
+    transform: rotate(54deg);
     position: absolute;
-    left: 7.5em;
-    top: -7.5em;
+    left: 5.4em;
+    top: -6.8em;
+    i {
+        transform: rotate(125deg);
+    }
 }
 
-.menu:hover .link3{
+.link.clickedLink:nth-child(3) {
     transform: rotate(90deg);
     position: absolute;
-    left: 10.3em;
+    left: 7.35em;
     top: 0;
+    i {
+        transform: rotate(90deg);
+    }
 }
 
-.menu:hover .link4{
-    transform: rotate(132deg);
+.link.clickedLink:nth-child(4) {
+    transform: rotate(126deg);
     position: absolute;
-    left: 7.5em;
-    top: 7em;
+    left: 5.5em;
+    top: 6em;
+    i {
+        transform: rotate(55deg);
+    }
 }
 
-.menu:hover .link5{
-    transform: rotate(178deg);
+.link.clickedLink:nth-child(5) {
+    transform: rotate(162deg);
     position: absolute;
     left: 0em;
-    top: 10.5em;
+    top: 10em;
+    i {
+        transform: rotate(20deg);
+    }
 }
-
-
-
 
