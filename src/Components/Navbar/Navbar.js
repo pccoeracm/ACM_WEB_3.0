@@ -36,7 +36,7 @@ const Navbar = () => {
                 <img src={logoacm} alt="logo" />
             </div>
             <div className="right">
-                <a href="www.google.com" className="modes modes-d">
+                <a href="#mode" className="modes modes-d">
                     <span data-text="Night">Night</span>
                     <img src={night} alt="" srcset="" />
                 </a> 
@@ -52,41 +52,41 @@ const Navbar = () => {
                         
                     </div>
                     <ul class="container">
-                        <li class={link}>
+                        <li className={link}>
                             <a href="#">
-                                <h2>Team</h2>
-                                <i class='bx bx-ghost'></i>
+                                <h2 data-text="Team">Team</h2>
+                                <i className='bx bx-ghost'></i>
                             </a>
                         </li>
-                        <li class={link}>
+                        <li className={link}>
                             <a href="#">
-                                <h2>About</h2>
-                                <i class='bx bx-ghost'></i>
+                                <h2 data-text="About">About</h2>
+                                <i className='bx bx-ghost'></i>
                             </a>
                         </li>
-                        <li class={link}>
+                        <li className={link}>
                             <a href="#home">
-                                <h2>Home</h2>
-                                <i class='bx bx-home-alt'></i>
+                                <h2 data-text="Home">Home</h2>
+                                <i className='bx bx-home-alt'></i>
                             </a>
                         </li>
-                        <li class={link}>
+                        <li className={link}>
                             <a href="#">
-                                <h2>Blogs</h2>
-                                <i class='bx bx-ghost'></i>
+                                <h2 data-text="Blogs">Blogs</h2>
+                                <i className='bx bx-ghost'></i>
                             </a>
                         </li>
-                        <li class={link}>
+                        <li className={link}>
                             <a href="#">
-                                <h2>Events</h2>
-                                <i class='bx bx-ghost'></i>
+                                <h2 data-text="Events">Events</h2>
+                                <i className='bx bx-ghost'></i>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-
+        <div className="trial"></div>
         
     </>
   )
