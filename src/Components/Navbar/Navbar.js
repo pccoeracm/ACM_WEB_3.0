@@ -5,7 +5,7 @@ import './Navbar.css'
 
 const Navbar = () => {
 
-    const [menu, setMenu] = useState("menu clicked")
+    const [menu, setMenu] = useState("menu unmenuclicked")
     const [hline, setLines] = useState("hmblines unClicked")
     const [circle, setCircle] = useState("circle unclickedCircle")
     const [link, setLink] = useState("link unclickedLink")
@@ -13,12 +13,14 @@ const Navbar = () => {
 
     const updateMenu = () => {
         if(!isMenuClicked) {
+            setMenu("menu menuclicked")
             setLines("hmblines clicked")
             setCircle("circle clickedCircle") 
             setLink("link clickedLink")
         }
 
         else {
+            setMenu("menu unmenuclicked")
             setLines("hmblines unclicked") 
             setCircle("circle unclickedCircle")
             setLink("link unclickedLink")
@@ -40,12 +42,14 @@ const Navbar = () => {
                 </a> 
             </div>
             <div className="menusection">
-                <div class={menu} onClick={updateMenu}>
-                    <div class={circle}>
+                <div class={menu}>
+                    <div className="c-before"></div>
+                    <div class={circle} onClick={updateMenu}>
                         <div class="lines">
                             <div class={hline}></div>
                             <div class={hline}></div>
-                        </div>
+                        </div>                        
+                        
                     </div>
                     <ul class="container">
                         <li class={link}>
@@ -61,7 +65,7 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li class={link}>
-                            <a href="#">
+                            <a href="#home">
                                 <h2>Home</h2>
                                 <i class='bx bx-home-alt'></i>
                             </a>
