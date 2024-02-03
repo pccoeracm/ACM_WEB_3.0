@@ -44,8 +44,8 @@ const Navbar = () => {
             <div className="menusection">
                 <div class={menu}>
                     <div className="c-before"></div>
-                    <div class={circle} onClick={updateMenu}>
-                        <div class="lines">
+                    <div className={circle} onClick={updateMenu}>
+                        <div className="lines">
                             <div class={hline}></div>
                             <div class={hline}></div>
                         </div>                        
@@ -86,7 +86,6 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-        <div className="trial"></div>
         
     </>
   )
