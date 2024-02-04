@@ -86,7 +86,6 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
-        <div className="trial"></div>
         
     </>
   )
