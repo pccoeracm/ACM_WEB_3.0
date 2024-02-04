@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 
-import './Blog.css';
+import './Blogs.css';
  
 const images = [
   '/blogs/android-vs-web.png',
   './blogs/augmenting-the-virtual.png',
   './blogs/casting-intelligence.png',
-  './blogs/crypto.png',
-  './blogs/the.png',
+  './blogs/cryptocurrency-are-they-great-or-a-threat.png',
+  './blogs/the-premise-of-cryptocurrency.png',
  ];
 const descriptions = [
   { title: 'Android development vs web development | Reality', author: '-OMKAR GHOTEKAR' },
