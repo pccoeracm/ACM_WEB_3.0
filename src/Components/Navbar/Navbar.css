@@ -49,7 +49,7 @@ nav {
     left: 0;
     top: 0;
     transition: 0.2s;
-    color: #464646;
+    color: #3f3f3f;
     transform: translateY(0); 
 }
 
@@ -58,7 +58,7 @@ nav {
     position: absolute;
     top: 0;left: 0;
     transition: 0.2s;
-    color: #464646;
+    color: #3f3f3f;
     transform: translateY(100%);
 }
 
@@ -87,6 +87,7 @@ nav {
 .menu {
     width: 12rem;
     height: 12rem;
+    cursor: pointer;
 }
 
 .circle {
@@ -99,11 +100,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: baseline;
-    z-index: 99;
+    z-index: 999;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
 }
 
-.circle::before {
-    content: '';
+.c-before {
     position: absolute;
     width: 14rem;
     height: 14rem;
@@ -114,7 +116,20 @@ nav {
     margin-left: -1.5rem;
     background: rgba(18, 59, 126, 0.29);
     transition: all .4s ease-in-out;
-    z-index: 90;
+    z-index: -1;
+}
+
+.menu:hover{
+    .circle{
+        box-shadow: -1px 0px 5px #131313;
+        transform: scale(1.02);
+    } 
+
+}
+
+.menuclicked .c-before {
+    width: 24rem;
+    height: 24rem;
 }
 
 .lines {
@@ -124,28 +139,40 @@ nav {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    align-items: end;
+    gap: 3px;
+    align-items: flex-end;
     margin-left: -3rem;
-    z-index: 99;
+    z-index: auto;
 }
 
-.lines .l1, .lines .l2 {
+.hmblines{
     height: 4px;
     width: 40px;
     background: #d9d9d9;
     border-radius: 2px;
+    transform: none;
+    transition: all .5s ease-in-out;
 }
 
-.lines .l2 {
+.hmblines:nth-child(2) {
     width: 20px;
-    margin-top: 4px;
 }
+
+.clicked.hmblines{
+    transform: rotate(225deg);transition-delay: .1s;
+}
+
+.clicked.hmblines:nth-child(2){
+    width: 40px;
+    transform: rotate(495deg) translate(-.3em, .29em);
+    
+}
+
 
 .menu ul {
     list-style: none;
-    padding: 0;
     position: absolute;
-    top: 50%;z-index: 98;
+    top: 50%;z-index: 99;
 }
 .menu li {
     display: grid;
@@ -153,7 +180,6 @@ nav {
     opacity: 0;
     transition: all .8s;
     width: 4rem;
-    
 }
 
 .container li a h2 {
@@ -163,7 +189,7 @@ nav {
     background: #d9d9d9;
     border-radius: 4px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 1px 5px;
     box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.4)
 }
@@ -177,10 +203,6 @@ nav {
     background: #d9d9d9;
     border-radius: 50%;
     text-align: center;
-}
-
-.menu:hover li {
-    opacity: 1;
 }
 
 .menu a {
@@ -204,50 +226,410 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-
-
-
-.menu:hover .circle::before {
-    width: 24rem;
-    height: 24rem;
-    margin-left: -4.5rem;
+.link.clickedLink {
+    opacity: 1;
 }
 
-.menu:hover .link1 {
-    transform: rotate(2deg);
+.link.clickedLink:nth-child(1) {
+    transform: rotate(18deg);
     position: absolute;
     left: 0em;
-    top: -11.1em;
+    top: -10.6em;
+    i {
+        transform: rotate(165deg);
+    }
 }
 
-.menu:hover .link2{
-    transform: rotate(48deg);
+.link.clickedLink:nth-child(2) {
+    transform: rotate(54deg);
     position: absolute;
-    left: 7.5em;
-    top: -7.5em;
+    left: 5.4em;
+    top: -6.8em;
+    i {
+        transform: rotate(125deg);
+    }
 }
 
-.menu:hover .link3{
+.link.clickedLink:nth-child(3) {
     transform: rotate(90deg);
     position: absolute;
-    left: 10.3em;
+    left: 7.35em;
     top: 0;
+    i {
+        transform: rotate(90deg);
+    }
 }
 
-.menu:hover .link4{
-    transform: rotate(132deg);
+.link.clickedLink:nth-child(4) {
+    transform: rotate(126deg);
     position: absolute;
-    left: 7.5em;
-    top: 7em;
+    left: 5.5em;
+    top: 6em;
+    i {
+        transform: rotate(55deg);
+    }
 }
 
-.menu:hover .link5{
-    transform: rotate(178deg);
+.link.clickedLink:nth-child(5) {
+    transform: rotate(162deg);
     position: absolute;
     left: 0em;
-    top: 10.5em;
+    top: 10em;
+    i {
+        transform: rotate(20deg);
+    }
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        height: 4rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: none;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .logo > img {
+        padding: 0rem 0 0 0rem;
+        width: 5rem;
+    }
+
+    .right a img {
+        height: 1.5rem;
+    }
+    
+
+    .menusection {
+        position: relative;
+        margin-top: 0;
+        right: -1.8rem;
+        top: -1.2rem;
+        height: 100%;
+    }
+
+    .menu {
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .circle {
+        height: 6rem;
+        width: 6rem;
+        z-index: 999;
+    }
+    
+    .c-before {
+        position: absolute;
+        width: 8rem;
+        height: 8rem;
+        margin: -4rem 0 0 -4rem;
+        transform: scale(1);
+        transition: transform .8s ease-in-out;
+
+    }
+
+    .c-before::after {
+        content: '';
+        position: absolute;
+        top: 50%;left: 50%;
+        transform: translate(-50%, -50%);
+        height: 5rem;
+        width: 5rem;
+        margin: -3rem 0 0 -2rem;
+        border-radius: 100%;
+        background: #123b7e;
+        transform: scale(1);
+        transition: transform .6s ease-in-out;
+        transition-delay: .2s;
+    }
+
+    .lines {
+        margin-left: -.6rem;
+        margin-top: 1rem;
+    }
+
+    .menuclicked .c-before {
+        margin: -18rem 0 0 -10rem;
+        transform: scale(40);
+    }
+
+    .menu ul {
+        position: absolute;
+        transform: rotate(0deg) translateX(0rem) translateY(0rem);
+        z-index: 99;
+        width: 100vw;height: 100vh;
+        opacity: 0;
+        visibility: hidden;
+        top: 0;left: 0;
+        margin-left: calc(4.3rem - 100vw);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menuclicked ul {
+        opacity: 1;visibility: visible;
+    }
+    
+    .menu li {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        top: 0;
+        margin-left: 15vw;
+        opacity: 1;
+        left: 250rem;
+        transition: left .4s ease-in-out;
+    }
+
+    .menu li a i {
+        display: none;
+    }
+
+    .container li a h2 {
+        color: transparent;
+        position: relative;
+        background: transparent;
+        font-size: 3.5rem;
+        margin-top: 0;
+        font-weight: 700;
+        width: 100%;
+        height: 4.7rem;
+        padding-top: 1.8rem;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: none;
+    }
+
+    .container li a h2::before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 1.8rem;
+        transition: 0.2s;
+        color: #ffffff;
+        transform: translateY(0); 
+        transition: all .8s ease;
+    }
+
+    .container li a h2::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;left: 0;
+        transition: 0.2s;
+        color: #ffffff;
+        transform: translateY(8rem);
+        transition: all .8s ease;
+    }
+
+    .container li a:hover h2::before {
+        transform: translateY(-8rem);
+    }
+
+    .container li a:hover h2::after {
+        transform: translateY(0);
+        padding-top: 1.8rem;
+    }
+    
+    .menu li a i{
+        display: none;
+    }
+
+    .link.clickedLink {
+        opacity: 1;
+    }
+    
+    .link.clickedLink:nth-child(1) {
+        transform: rotate(0);
+        position: relative;
+        left: 0;
+        top: 0;
+        transition-delay: .1s;
+    }
+    
+    .link.clickedLink:nth-child(2) {
+        transform: rotate(0);
+        position: relative;
+        left: 0;
+        top: 0;    
+        transition-delay: .2s;
+    }
+    
+    .link.clickedLink:nth-child(3) {
+        transform: rotate(0deg);
+        position: relative;
+        left: 0;
+        top: 0;
+        transition-delay: .3s;
+    }
+    
+    .link.clickedLink:nth-child(4) {
+        transform: rotate(0deg);
+        position: relative;
+        left: 0;
+        top: 0; 
+        transition-delay: .4s;
+    }
+    
+    .link.clickedLink:nth-child(5) {
+        transform: rotate(0deg);
+        position: relative;
+        left: 0;
+        top: 0;  
+        transition-delay: .5s;
+    }
+
 }
 
 
+/* 
+@media (max-width: 768px) {
+    .menusection {
+        position: fixed;
+        margin-top: 0;
+        height: 100vh;
+        width: 100vw;
+        right: 0;
+        align-items: normal;
+        z-index: 999;
+    }
+
+    .circle {
+        position: absolute;
+        right: 0;
+        height: 6rem;
+        width: 6rem;
+        margin: -2rem;
+    }
+    
+    .circle::before {
+        width: 8rem;
+        height: 8rem;
+        margin: -4rem 0 0 -4rem;
+        transform: scale(1);
+        transition: transform .8s ease-in-out;
+    }
+
+    .circle::after {
+        content: '';
+        position: absolute;
+        top: 50%;left: 50%;
+        transform: translate(-50%, -50%);
+        height: 5rem;
+        width: 5rem;
+        margin: -3rem 0 0 -2rem;
+        border-radius: 100%;
+        background: #123B7E;
+        transform: scale(1);
+        transition: transform .6s ease-in-out;
+        transition-delay: .2s;
+    }
 
 
+    .lines {
+        margin-left: -1rem;
+        margin-top: .5rem;
+        z-index: 101;
+    }
+
+    .clickedCircle::before {
+        transform: scale(30);
+    }
+    .clickedCircle::after {
+        transform: scale(20);
+    }
+
+    .menu {
+        position: relative;
+        display: grid;
+        place-content: center;
+    }
+
+    .menu ul {
+        position: absolute;
+        z-index: 99;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .menu li {
+        position: relative;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .container li a h2 {
+        color: #d9d9d9;
+        background: transparent;
+        font-size: 4rem;
+        font-weight: 700;
+        width: 100%;
+        text-align: center;
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .menu li a i{
+        display: none;
+    }
+
+    .txt-1, .txt-2, .txt-3, .txt-4, .txt-5 {
+        transform: translateX(30rem);
+        transition: transform .6s ease-in-out;
+    }
+
+    .menu:hover .txt-1 {
+        transform: translateX(0);
+        transition-delay: .4s;
+    }
+
+    .menu:hover .txt-2 {
+        transform: translateX(0);
+        transition-delay: .3s;
+    }
+
+    .menu:hover .txt-3 {
+        transform: translateX(0);
+        transition-delay: .2s;
+    }
+
+    .menu:hover .txt-4 {
+        transform: translateX(0);
+        transition-delay: .1s;
+    }
+
+    .menu:hover .txt-5 {
+        transform: translateX(0);
+    }
+    
+    .menu a {
+        color: white;
+        text-decoration: none;
+        line-height: 4em;
+    }
+    .menu a {
+        color: white;
+        text-decoration: none;
+    }
+    .menu ul {
+        transform: rotate(0deg) translateX(0) translateY(0);
+        transition: .8s all ease-in-out;
+    }
+    
+    .menu li {
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+} */
+
+.trial {
+    height: 200vh;
+}
