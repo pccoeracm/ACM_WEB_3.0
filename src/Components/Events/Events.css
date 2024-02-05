@@ -28,7 +28,7 @@ letter-spacing: -3.66px;
     text-align: center;
     padding: 20px;
     background-color: #D9D9D9;
-    margin: -255px 0 0  430px ;
+    margin: -235px 0 0  430px ;
     border-radius: 10px;
     backdrop-filter: blur(2px);
 background: rgba(217, 217, 217,0.71 );
@@ -38,7 +38,7 @@ overflow: hidden;
  .image2{
     width: 410px;
 height: 256px;
-margin: 100px 0 0 840px;
+margin: 90px 0 0 840px;
 border-radius: 5px;
 background:  lightgray 50% / cover no-repeat;
 }
@@ -48,7 +48,7 @@ background:  lightgray 50% / cover no-repeat;
     text-align: center;
     padding: 20px;
     background-color: #D9D9D9;
-    margin: -220px 0 0  500px ;
+    margin: -230px 0 0  500px ;
     border-radius: 10px;
 background: rgba(217, 217, 217,0.71);
 backdrop-filter: blur(2px);
