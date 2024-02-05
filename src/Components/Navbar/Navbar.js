@@ -54,16 +54,20 @@ const Navbar = () => {
                     </div>
                     <ul class="container">
                         <li className={link}>
+                        <Link to={`/Team`}>
                             <a href="#">
                                 <h2 data-text="Team">Team</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
                         <li className={link}>
+                        <Link to={`/About`}>
                             <a href="#">
                                 <h2 data-text="About">About</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
                         
                         <li className={link}>
@@ -76,19 +80,23 @@ const Navbar = () => {
                         </li>
                         
                         <li className={link}>
+                        <Link to={`/Blogs`} >
                             <a href="#">
                                 <h2 data-text="Blogs">Blogs</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
-                        <Link to ={`/Events`}>  
+                          
                         <li className={link}>
+                        <Link to ={`/Events`}>
                             <a href="#">
                                 <h2 data-text="Events">Events</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
-                        </Link>
+                       
                     </ul>
                 </div>
             </div>
