@@ -7,7 +7,6 @@ import Navbar from '../Navbar/Navbar';
 const Events = () => {
   return (
     <>
-    <Navbar />
     <div className='events'>
     <h1>Upcoming Events</h1>
     <img  className='image1' src= {Image} alt='image' /> 
