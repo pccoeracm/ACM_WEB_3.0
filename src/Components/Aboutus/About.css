@@ -116,6 +116,7 @@ body {
     animation: scroll-reveal-mobile linear forwards;
     animation-timeline: view(y);
     animation-range-start: cover 20vh;
+    animation-range-end: cover 80vh;
   }
 
   @keyframes scroll-reveal-mobile {
