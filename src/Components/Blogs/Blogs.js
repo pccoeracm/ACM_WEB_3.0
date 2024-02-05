@@ -21,20 +21,20 @@ const descriptions = [
  
 ];
 
-function Blog() {
+const Blog = ()=> {
   
   const [showMore, setShowMore] = useState(false);
   const maxCardsToShow = showMore ? images.length : 3;
-  const [theme, setTheme] = useState("light-theme")
-  const toggleTheme = ()=>{
-    theme==="dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
-  };
+  // const [theme, setTheme] = useState("light-theme")
+  // const toggleTheme = ()=>{
+  //   theme==="dark-theme" ? setTheme("light-theme") : setTheme("dark-theme");
+  // };
   return (
     <>
     <div className="main">
     
-    < button href="#" className="btn" onClick={ ()=> toggleTheme()}> Toggle Mode</button>
-    <h1>Blogs</h1>
+    {/* < button  className="btn" onClick={ ()=> toggleTheme()}> Toggle Mode</button> */}
+    <h1 className="Blogs_h1">Blogs</h1>
    
     <div className="card-container" >
        
@@ -42,7 +42,7 @@ function Blog() {
         <div key={index} className="card" >
           <img src={image} alt={`Blog ${index + 1}`} /> 
           <div className="card-content">
-          <h2>{descriptions[index].title}</h2>
+          <h2 className="card_content_h2">{descriptions[index].title}</h2>
            <p className="author">{descriptions[index].author}</p>
            </div>
         </div>
