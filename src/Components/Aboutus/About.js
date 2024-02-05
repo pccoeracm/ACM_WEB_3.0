@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./About.css";
 
 const App = () => {
-  const [theme, setTheme] = useState("light-theme");
+  // const [theme, setTheme] = useState("light-theme");
 
   useEffect(() => {
     document.body.className = theme;
@@ -40,13 +40,13 @@ const App = () => {
           </p>
         </div>
       </div>
-      <button
+      {/* <button
         onClick={() => {
           setTheme(theme === "dark-theme" ? "light-theme" : "dark-theme");
         }}
       >
         Change Mode
-      </button>
+      </button> */}
     </>
   );
 };
