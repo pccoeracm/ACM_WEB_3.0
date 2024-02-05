@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logoacm from '../Assets/acmLogobg.png'
 import night from '../Assets/moon-svgrepo-com.svg'
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -53,40 +54,53 @@ const Navbar = () => {
                     </div>
                     <ul class="container">
                         <li className={link}>
+                        <Link to={`/Team`}>
                             <a href="#">
                                 <h2 data-text="Team">Team</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
                         <li className={link}>
+                        <Link to={`/About`}>
                             <a href="#">
                                 <h2 data-text="About">About</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
+                        
                         <li className={link}>
+                        <Link to={`/`}>
                             <a href="#home">
                                 <h2 data-text="Home">Home</h2>
                                 <i className='bx bx-home-alt'></i>
                             </a>
+                            </Link>
                         </li>
+                        
                         <li className={link}>
+                        <Link to={`/Blogs`} >
                             <a href="#">
                                 <h2 data-text="Blogs">Blogs</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
+                          
                         <li className={link}>
+                        <Link to ={`/Events`}>
                             <a href="#">
                                 <h2 data-text="Events">Events</h2>
                                 <i className='bx bx-ghost'></i>
                             </a>
+                            </Link>
                         </li>
+                       
                     </ul>
                 </div>
             </div>
         </nav>
-        <div className="trial"></div>
         
     </>
   )
