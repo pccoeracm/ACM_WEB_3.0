@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 *{
     padding: 0;
     margin: 0;
@@ -16,72 +14,140 @@
     padding-top: 19vh;
     padding-left: 3rem;
     padding-right: 3rem;
+    margin-bottom: 4rem;
     max-width: calc(100vw-25rem);
     width: 100vw;
     height: 100vh;
     font-size: 2.7vw;
-    line-height: 4rem;
     color: var(--navcolor);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.header{
+    font-size: 7vw;
+    line-height: 1rem;
+    color: var(--navcolor);
+    padding-bottom: 2vh;
+
+}
+.header span{
+  display: inline-block;
+  padding: 2vw 1vw;
+  position: relative;
+}
+
+.h1{
+  animation: emergeFromBottom 0.6s ease-out;
+}
+
+.h2{
+  animation: emergeFromBottom 0.8s ease-out;
+  font-style: italic;
+}
+
+.h3{
+  animation: emergeFromBottom 1s ease-out;
+}
+
 .Gif-text{
-    padding-top: 4.5rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0%;
+    margin-top: 0.5rem;
     display: flex;
     max-width: calc(100vw-25rem);
 }
 .gif-img{
     border-radius: 80px;
-    width: 14vw;
-    height: 12vh;
+    width: 14dvw;
+    height: 9dvw;
+    object-fit: cover;
+    animation: ZoomIn 1.3s ease-out;
 }
 
-
-
-@keyframes floatAnimation {
-    0% {
-      transform: translateY(5px);
-    }
-    50% {
-      transform: translateY(-5px); 
-    }
-    100% {
-      transform: translateY(5px);
-    }
+.Lines{
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0.5rem 0.5rem 1rem;
+    font-size: 5vw;
 }
 
-@media only screen and (max-width: 800px)
+.Lines span{
+  display: inline-block;
+  padding: 1.5vw 0 0 1.5vw ;
+  position: relative;
+
+}
+.l1{
+  animation: emergeFromBottom 1.2s ease-out;
+}
+.l2{
+  animation: emergeFromBottom 1.4s ease-out;
+}
+.l3{
+  animation: emergeFromBottom 1.6s ease-out;
+}
+.l4{
+  animation: emergeFromBottom 1.8s ease-out;
+}
+@keyframes emergeFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes ZoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 767px)
 {
     .Home{
         align-items: center;
         justify-content: center;
-        padding-left: 12vw;
+        padding-left: 10vw;
+        padding-bottom: 4rem;
         left: 5dvw;
         right: 5dvw;
-        width: 100vw;
-        height: 100vh;
-        font-size: 2.7dvw;
-        line-height: 4rem;
+        width: 100%;
+        height: 100%;
+        font-size: 3.2vw;
+        line-height: 5vw;
         color: var(--homelight);
     }
-
+    .header{
+        padding-bottom: 0%;
+        font-size: 6.5dvw;
+    }
     .Gif-text{
+        position: relative;
+        display: inline-block;
         align-items: center;
+        margin: 0.2rem;
         display: flex;
-        padding-top: 2.5rem;
+        padding: 0%;
+        overflow: hidden;
     }
     .gif-img{
         align-items: center;
         left: 10dvw;
         right: 5dvw;
-        width: 20dvw;
-        height: 10vh;
+        width: 12dvw;
+        height: 10dvw;
+        margin-top: 1rem;
+        object-fit: cover;
+        animation: ZoomIn 1s ease-out;
     }
 
-
-    .Lines{
-        align-items: center;
-        padding-left: 3rem;
-        padding-bottom: 1rem;
-        line-height: 2rem;
-    }
-
+    .Lines span{
+        padding: 0.5vh 0.5rem 0.5vh 0.5rem;
+        font-size: 5dvw;
+        line-height: 6vw;
+    }    
 }
