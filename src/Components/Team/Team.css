@@ -1,0 +1,57 @@
+.heading {
+    margin-top: 4rem;
+    margin-left: 10rem;
+}
+
+.heading h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.team-cards {
+    margin-left: 6rem;
+    width: calc(100% - 24rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.team-cards .card {
+    width: 13rem;
+    height: 15rem;
+    background: white;
+    box-shadow: 5px 5px 30px #3b3a3a80;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-right: 4rem;
+    margin-top: 3rem;
+    transform: scale(1);
+    transition: transform .2s ease-in-out;
+}
+
+.card img {
+    width: 6rem;
+    border-radius: 50%;
+}
+
+.card h2 {
+    margin-top: .7rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.card h4 {
+    color: rgb(40, 39, 39);
+}
+
+.card i {
+    color: rgba(52, 51, 51, 0.685);
+    font-size: 2rem;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
